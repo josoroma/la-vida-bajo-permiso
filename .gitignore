@@ -1,0 +1,20 @@
+node_modules/
+.DS_Store
+pruebas/capturas/
+*.log
+
+# Local research and original source material.
+/investigacion/
+/*.pdf
+/plan.md
+
+# Rebuilt from the manuscript and source assets.
+/publicacion/
+/datos/build-report.json
+
+# Local credentials and configuration.
+.env
+.env.*
+!.env.example
+*.pem
+*.key

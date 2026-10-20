@@ -1,0 +1,200 @@
+{
+  "glossary": [
+    {
+      "id": "fascismo",
+      "term": "Fascismo",
+      "definition": "Familia histórica de movimientos y regímenes que combina nacionalismo excluyente, movilización de masas, legitimación de la violencia y destrucción del pluralismo. Una regulación o un abuso aislado no bastan para identificarla."
+    },
+    {
+      "id": "autoritarismo",
+      "term": "Autoritarismo",
+      "definition": "Concentración del mando que reduce controles y posibilidades efectivas de oposición. Describe una relación de poder; no determina por sí sola que el régimen pertenezca al fascismo histórico."
+    },
+    {
+      "id": "totalitarismo",
+      "term": "Totalitarismo",
+      "definition": "Pretensión de someter la pluralidad de la vida social a una dirección política que no reconoce ámbitos legítimos de independencia. Una pretensión total no implica que el control real carezca de fricciones."
+    },
+    {
+      "id": "pluralismo",
+      "term": "Pluralismo",
+      "definition": "Existencia y protección de fines, organizaciones y opiniones diferentes. Requiere que el desacuerdo pueda mantenerse sin perder por ello derechos ni acceso a vías de defensa."
+    },
+    {
+      "id": "corporativismo",
+      "term": "Corporativismo",
+      "definition": "Organización de la representación política o económica mediante sectores y cuerpos profesionales. Debe distinguirse la negociación entre asociaciones libres de la representación obligatoria y subordinada al Estado."
+    },
+    {
+      "id": "captura-institucional",
+      "term": "Captura institucional",
+      "definition": "Influencia que orienta una institución hacia los intereses de quienes debería regular o controlar. Se investiga mediante facultades, decisiones y beneficiarios concretos; no se deduce de una reunión o contacto aislado."
+    },
+    {
+      "id": "privilegio",
+      "term": "Privilegio",
+      "definition": "Ventaja jurídica o acceso excepcional concedido por pertenencia, conexión o poder de presión, sin una razón general defendible. No toda diferencia de trato es un privilegio: importa su justificación y posibilidad de revisión."
+    },
+    {
+      "id": "igualdad-ante-la-ley",
+      "term": "Igualdad ante la ley",
+      "definition": "Exigencia de aplicar criterios justificables a situaciones comparables, sin favores ni exclusiones arbitrarias. Permite diferencias pertinentes y discutibles; no promete resultados materiales idénticos."
+    },
+    {
+      "id": "coaccion",
+      "term": "Coacción",
+      "definition": "Uso o amenaza de fuerza para restringir la decisión de una persona. Puede provenir de autoridades o particulares. Debe distinguirse de una oferta desagradable, una crítica o una negativa lícita a contratar."
+    },
+    {
+      "id": "propiedad",
+      "term": "Propiedad",
+      "definition": "Conjunto de facultades para usar, disponer y transferir bienes, sujeto a responsabilidad por daños y a reglas justificables. El título formal no revela por sí solo quién decide realmente ni si existe capacidad de salir."
+    },
+    {
+      "id": "calculo-economico",
+      "term": "Cálculo económico",
+      "definition": "Comparación monetaria de usos alternativos de recursos heterogéneos mediante precios de intercambio. Es distinto de contar existencias o predecir cantidades; permite formular y contrastar decisiones, sin garantizar aciertos."
+    },
+    {
+      "id": "conocimiento-disperso",
+      "term": "Conocimiento disperso",
+      "definition": "Información práctica repartida entre personas, lugares y momentos, parte de la cual se descubre al actuar. Reunir datos existentes y permitir nuevos descubrimientos son tareas diferentes."
+    },
+    {
+      "id": "incentivos",
+      "term": "Incentivos",
+      "definition": "Consecuencias esperadas que influyen en una decisión: ingresos, pérdidas, sanciones, reconocimiento o seguridad. No determinan mecánicamente la conducta ni sustituyen el examen de convicciones y circunstancias."
+    },
+    {
+      "id": "costo-de-oportunidad",
+      "term": "Costo de oportunidad",
+      "definition": "Valor de la mejor alternativa sacrificada al utilizar un recurso de una manera determinada. Puede existir aunque no aparezca como un pago en el presupuesto de quien decide."
+    },
+    {
+      "id": "competencia",
+      "term": "Competencia",
+      "definition": "Posibilidad efectiva de ofrecer alternativas y disputar elecciones de compradores, trabajadores o asociados. Requiere examinar barreras de entrada y salida; la mera presencia de varias organizaciones no asegura un campo abierto."
+    },
+    {
+      "id": "cartel",
+      "term": "Cartel",
+      "definition": "Acuerdo entre productores para restringir aspectos de la competencia, como precios, cantidades o reparto de clientes. Su alcance depende de cómo se sostiene y de si otros pueden entrar o incumplirlo."
+    },
+    {
+      "id": "intervencion",
+      "term": "Intervención económica",
+      "definition": "Actuación pública que modifica condiciones de producción, intercambio o uso de recursos. Sus efectos dependen del instrumento, el contexto y las alternativas; no toda intervención elimina el cálculo ni conduce inevitablemente a una dictadura."
+    },
+    {
+      "id": "burocracia",
+      "term": "Burocracia",
+      "definition": "Organización de tareas mediante competencias, presupuestos, expedientes y reglas. Puede limitar arbitrariedades o multiplicar barreras; debe evaluarse por funciones, facultades y posibilidades de responsabilidad."
+    },
+    {
+      "id": "estado-de-excepcion",
+      "term": "Estado de excepción",
+      "definition": "Régimen extraordinario de facultades o restricciones frente a una emergencia definida. Su justificación exige examinar necesidad, alcance, duración y controles; la urgencia no elimina todos los derechos."
+    },
+    {
+      "id": "autarquia",
+      "term": "Autarquía",
+      "definition": "Búsqueda de autosuficiencia económica mediante reducción de dependencias externas. Debe distinguirse de diversificar proveedores o mantener reservas; sus costos y efectos no se deducen del ideal de independencia."
+    },
+    {
+      "id": "libertad-de-asociacion",
+      "term": "Libertad de asociación",
+      "definition": "Capacidad de crear organizaciones, incorporarse a ellas y participar con autonomía. La representación requiere mandato y responsabilidad; no concede automáticamente facultad para imponer privilegios o silenciar a terceros."
+    },
+    {
+      "id": "trabajo-forzado",
+      "term": "Trabajo forzado",
+      "definition": "Trabajo exigido mediante coacción y sin una posibilidad genuina de negarse o salir. En el sistema nazi estuvo vinculado a cautiverio, deportación y persecución. No debe equipararse sin distinciones a cualquier empleo precario."
+    }
+  ],
+  "timeline": [
+    {
+      "date": "30 de octubre de 1922",
+      "title": "El encargo de gobierno a Mussolini",
+      "text": "La prensa de la fecha anuncia el encargo real de formar gobierno. Las portadas originales conservadas por la Presidencia italiana documentan la entrada del fascismo en el ejecutivo, tras la presión de la Marcha sobre Roma.",
+      "url": "https://archivio.quirinale.it/aspr/inventario/HIST-001-013749/prima-pagina-quotidiani-corriere-della-sera-e-stampa-sul-conferimento-incarico-governo-parte-del-re-mussolini"
+    },
+    {
+      "date": "3 de abril de 1926",
+      "title": "Ley italiana sobre relaciones colectivas de trabajo",
+      "text": "La ley 563 organiza el reconocimiento estatal de asociaciones profesionales y el régimen de relaciones colectivas; restringe huelgas y cierres patronales. La fecha corresponde a la ley, publicada en la Gazzetta Ufficiale el 14 de abril.",
+      "url": "https://www.gazzettaufficiale.it/eli/gu/1926/04/14/87/sg/pdf"
+    },
+    {
+      "date": "28 de febrero de 1933",
+      "title": "Decreto posterior al incendio del Reichstag",
+      "text": "El decreto presidencial suspende garantías de libertad, expresión, reunión, asociación y privacidad, y amplía la intervención central. El documento permite comprobar las facultades concedidas sin resolver por conjetura la autoría del incendio.",
+      "url": "https://germanhistorydocs.org/en/nazi-germany-1933-1945/ghdi:document-2325"
+    },
+    {
+      "date": "23–24 de marzo de 1933",
+      "title": "Aprobación y promulgación de la Ley Habilitante",
+      "text": "El Reichstag aprueba el 23 de marzo la transferencia de facultades legislativas al gabinete. La ley se promulga y publica el 24. Distinguir ambas fechas evita confundir la votación con la entrada en vigor.",
+      "url": "https://germanhistorydocs.org/en/nazi-germany-1933-1945/the-enabling-act-march-24-1933"
+    },
+    {
+      "date": "2 de mayo de 1933",
+      "title": "Destrucción de los sindicatos libres alemanes",
+      "text": "Las organizaciones nazis ocupan sedes sindicales y desarticulan la representación independiente. La circular de Robert Ley del 21 de abril había fijado la operación para el 2 de mayo a las diez de la mañana.",
+      "url": "https://germanhistorydocs.org/en/nazi-germany-1933-1945/ghdi:document-1501"
+    },
+    {
+      "date": "15 de septiembre de 1935",
+      "title": "Ley de Ciudadanía del Reich",
+      "text": "Una de las leyes de Núremberg reserva la ciudadanía plena a personas clasificadas como de sangre alemana o afín. El texto primario y su reglamento posterior muestran cómo la exclusión racial se convierte en categoría jurídica.",
+      "url": "https://ghdi.ghi-dc.org/docpage.cfm?docpage_id=2170"
+    },
+    {
+      "date": "3 de octubre de 1935",
+      "title": "Italia invade Etiopía",
+      "text": "La invasión inicia la guerra de conquista. Los archivos del CICR conservan documentación de ataques contra hospitales de campaña; esa dimensión colonial debe incorporarse al estudio de la violencia fascista.",
+      "url": "https://blogs.icrc.org/cross-files/the-cross-in-the-crosshairs-a-photographic-record-of-the-bombing-of-red-cross-field-hospitals-during-the-second-italo-ethiopian-war/"
+    },
+    {
+      "date": "Agosto de 1936",
+      "title": "Memorando sobre autarquía y preparación bélica",
+      "text": "Hitler formula la exigencia de preparar ejército y economía para la guerra en cuatro años. El documento vincula recursos y expansión territorial. Se conserva la precisión mensual del original, sin inventar un día.",
+      "url": "https://germanhistorydocs.org/en/nazi-germany-1933-1945/hitler-s-confidential-memo-on-autarky-august-1936"
+    },
+    {
+      "date": "17 de noviembre de 1938",
+      "title": "Decreto racial italiano 1728",
+      "text": "El decreto profundiza la exclusión civil y económica de los judíos italianos. Se publica el 19 de noviembre. El facsímil oficial permite revisar las categorías y restricciones, sin reducir el racismo italiano a una influencia exterior.",
+      "url": "https://www.gazzettaufficiale.it/eli/gu/1938/11/19/264/sg/pdf"
+    },
+    {
+      "date": "22 de febrero de 1943",
+      "title": "Condena y ejecución de miembros de la Rosa Blanca",
+      "text": "Hans y Sophie Scholl y Christoph Probst son condenados y ejecutados. El Bundesarchiv conserva documentos de investigación, proceso y ejecución, junto con las hojas de resistencia. Sus actos muestran que la sociedad no fue un bloque sin disenso.",
+      "url": "https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/widerstandsgruppe-weisse-rose/"
+    },
+    {
+      "date": "7–8 de mayo de 1945",
+      "title": "Rendición militar alemana",
+      "text": "La rendición se firma en Reims el 7 de mayo, con cese de operaciones el 8; otra firma tiene lugar en Berlín el 8. Los documentos conservados por los Archivos Nacionales estadounidenses permiten distinguir ambas actas.",
+      "url": "https://www.archives.gov/milestone-documents/surrender-of-germany"
+    },
+    {
+      "date": "10 de diciembre de 1948",
+      "title": "Declaración Universal de Derechos Humanos",
+      "text": "La Asamblea General de la ONU adopta la Declaración. Sus artículos formulan garantías de igualdad, libertad, asociación y protección frente a privaciones arbitrarias. Su aprobación no demuestra por sí sola su cumplimiento.",
+      "url": "https://digitallibrary.un.org/record/1327842/files/A_811-EN.pdf"
+    },
+    {
+      "date": "16 de diciembre de 1966",
+      "title": "Adopción del Pacto de Derechos Civiles y Políticos",
+      "text": "La Asamblea General adopta el Pacto, que entrará en vigor el 23 de marzo de 1976. Incluye participación política, igualdad y condiciones para las suspensiones de obligaciones durante emergencias.",
+      "url": "https://2covenants.ohchr.org/About-ICCPR.html"
+    },
+    {
+      "date": "1 de agosto de 2024",
+      "title": "Entrada en vigor del Reglamento europeo de IA",
+      "text": "Entra en vigor el Reglamento de Inteligencia Artificial de la Unión Europea. Es un hito del debate contemporáneo sobre tecnología y derechos; no una equivalencia con los regímenes anteriores. La aplicación de disposiciones concretas tiene su propio calendario y modificaciones.",
+      "url": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en"
+    }
+  ]
+}

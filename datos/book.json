@@ -1,0 +1,33 @@
+{
+  "title": "La vida bajo permiso",
+  "subtitle": "Fascismo, privilegios y libertad en el siglo XXI",
+  "author": "Josoroma + AI Corpus",
+  "language": "es",
+  "edition": "Edición digital · 2026",
+  "cutoff": "19 de octubre de 2026",
+  "dedication": "A la persona más increíble de mi vida, mi hija: Isa Orozco Gros-Desormeaux.",
+  "parts": [
+    {"number":1,"roman":"I","title":"La promesa de un solo pueblo","description":"El miedo, la pertenencia y la construcción de un poder sin disenso.","chapters":[1,2,3,4]},
+    {"number":2,"roman":"II","title":"Los medios para vivir","description":"Propiedad, conocimiento y los negocios que prosperan al cerrar la competencia.","chapters":[5,6,7,8]},
+    {"number":3,"roman":"III","title":"Aprender a obedecer","description":"La fabricación del enemigo, las excepciones y la organización de la guerra.","chapters":[9,10,11,12]},
+    {"number":4,"roman":"IV","title":"La libertad en 2026","description":"Datos, dependencias y la posibilidad de vivir sin un destino obligatorio.","chapters":[13,14,15,16]}
+  ],
+  "chapters": [
+    "La palabra que ya no explica",
+    "El precio de sentirse protegido",
+    "Italia: la violencia entra en las instituciones",
+    "Alemania: pertenecer, obedecer, excluir",
+    "Lo que ningún centro puede saber",
+    "Propietarios bajo órdenes",
+    "El negocio del privilegio",
+    "Cuando una orden necesita otra",
+    "El enemigo necesario",
+    "La mayoría no dispone de una vida",
+    "La emergencia que se queda",
+    "Una economía preparada para la guerra",
+    "El poder de observar y permitir",
+    "Competir cuando otros reparten el acceso",
+    "Reconocer sin confundir",
+    "Vivir sin un destino obligatorio"
+  ]
+}
