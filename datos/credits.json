@@ -2,31 +2,32 @@
   "entries": [
     {
       "id": "c01",
-      "role": "Fragmento de procedencia incompleta",
+      "role": "Fragmento · autoría sin confirmar",
       "name": "Fragmento sobre socialismo, fascismo y coacción",
       "title": "Fragmento sobre socialismo, fascismo y coacción",
       "date": "",
       "contribution": "Su breve comparación abrió una pregunta que el libro somete a examen: qué permite comparar regímenes y qué diferencias históricas impiden confundirlos.",
-      "note": "El fragmento conservado carece de título original, crédito y datos de la grabación. No se asigna un nombre por semejanza de ideas. Tampoco se adopta su equivalencia general entre socialismo y fascismo como hecho demostrado."
+      "note": "El título de esta ficha describe el contenido del fragmento. La transcripción no identifica al hablante ni la entrevista de origen, y las referencias disponibles no resuelven esa atribución. Su comparación se examina como argumento, sin convertirla en prueba histórica de una equivalencia entre regímenes."
     },
     {
       "id": "c02",
-      "role": "Interlocutor identificado; grabación incompleta",
+      "role": "Entrevistado · John O’Sullivan, entrevistador",
       "name": "Friedrich A. Hayek",
-      "title": "Entrevista sobre conocimiento disperso y coordinación",
-      "date": "Fecha y entrevistador no comprobados",
+      "title": "Hayek: His Life and Thought",
+      "date": "1985",
       "contribution": "La dificultad de reunir el conocimiento de millones de personas es una de las deudas intelectuales del libro. Aquí se distingue de los problemas del cálculo monetario y de los incentivos.",
-      "note": "El texto coincide con una transcripción bilingüe publicada bajo su nombre. Esa correspondencia permite atribuir el interlocutor, pero no certificar la edición de la grabación. El argumento se cotejó además con su artículo original The Use of Knowledge in Society (1945), citado en las notas del capítulo 5.",
-      "url": "https://anarcocapitalista.com/Hayekesp.htm"
+      "note": "El extracto difundido como Hayek on Socialism procede de esta entrevista, realizada por John O’Sullivan y producida por Films for the Humanities. La ficha institucional identifica esos créditos. El argumento sobre conocimiento disperso se contrasta con The Use of Knowledge in Society, citado en las notas del capítulo 5.",
+      "url": "https://mises.org/podcasts/documentaries/hayek-his-life-and-thought",
+      "linkLabel": "Ficha de la entrevista · Mises Institute"
     },
     {
       "id": "c03",
-      "role": "Exposición secundaria",
-      "name": "Narrador no identificado · obra comentada de Friedrich A. Hayek",
+      "role": "Comentario secundario · narración sin atribución",
+      "name": "Exposición sobre planificación, fines y libertad",
       "title": "Exposición sobre planificación, fines y libertad",
       "date": "",
       "contribution": "La discusión sobre desacuerdos entre fines personales ayudó a formular la pregunta del libro por los límites del mando. Las afirmaciones de esta exposición se contrastaron por separado.",
-      "note": "Hayek es el autor comentado, no el narrador de esta transcripción. La transcripción no permite atribuir la pieza audiovisual a un canal o creador concreto. Se conserva esa incertidumbre y se reconoce la obra original sin adjudicarle la narración."
+      "note": "Friedrich A. Hayek es el autor de las obras comentadas. El fragmento no permite identificar a quien las expone. El título de esta ficha describe su contenido; no se presenta como el título original de la pieza ni se atribuye la narración a Hayek."
     },
     {
       "id": "c04",
@@ -36,7 +37,8 @@
       "date": "Ciclo del 7–8 de octubre de 2005",
       "contribution": "Su análisis de la alianza entre intereses organizados y poder público nutre la crítica a quienes obtienen beneficios de restringir el acceso ajeno.",
       "note": "La transcripción recibida termina a los 7:54 y no contiene el cierre. Se identificó la conferencia en el catálogo de la entidad organizadora; el libro no reconstruye el tramo ausente ni adopta automáticamente su clasificación de Estados Unidos.",
-      "url": "https://mises.org/podcasts/economics-fascism/quasi-corporatism-americas-home-grown-fascism"
+      "url": "https://mises.org/podcasts/economics-fascism/quasi-corporatism-americas-home-grown-fascism",
+      "linkLabel": "Ficha de la conferencia · Mises Institute"
     },
     {
       "id": "c06",
@@ -46,17 +48,19 @@
       "date": "Ciclo del 7–8 de octubre de 2005",
       "contribution": "Su crítica de la cooptación y de la cercanía entre riqueza y poder ayuda a separar la defensa de mercados abiertos de la defensa de empresarios protegidos.",
       "note": "Se cotejaron la apertura, la discusión sobre riqueza y poder y el cierre con el texto de la conferencia. El libro reconoce también formas de dominación privada que no se explican únicamente por un privilegio estatal.",
-      "url": "https://c4ss.org/content/15126"
+      "url": "https://c4ss.org/content/15126",
+      "linkLabel": "Texto de la conferencia · C4SS"
     },
     {
       "id": "c07",
       "role": "Conferenciante",
       "name": "David Gordon",
-      "title": "The Austrians on Fascism: Hayek, Mises, and Roepke",
+      "title": "The Austrians on Fascism: Hayek, Mises, and Röpke",
       "date": "Ciclo del 7–8 de octubre de 2005",
       "contribution": "Su lectura comparada aporta problemas sobre planificación, propiedad y poder. La distinción entre un título de propiedad y las decisiones efectivamente disponibles se desarrolla en los capítulos económicos.",
-      "note": "Las interpretaciones sobre la economía nazi se contrastan con documentos históricos y estudios de industria. No se acepta que toda empresa perdiera idéntico margen de autonomía. Los autores comentados en la conferencia se distinguen de su expositor.",
-      "url": "https://mises.org/podcasts/economics-fascism"
+      "note": "David Gordon es el autor de la exposición; Hayek, Mises y Röpke son los pensadores cuyas posiciones examina. La ficha institucional registra el apellido Röpke como Roepke. Las interpretaciones sobre la economía nazi se contrastan con documentos históricos y estudios de industria, sin suponer que toda empresa perdiera idéntico margen de autonomía.",
+      "url": "https://mises.org/podcasts/economics-fascism/austrians-fascism-hayek-mises-and-roepke",
+      "linkLabel": "Ficha de la conferencia · Mises Institute"
     },
     {
       "id": "c08",
@@ -66,7 +70,8 @@
       "date": "Ciclo del 7–8 de octubre de 2005",
       "contribution": "Su revisión de la dinámica de controles, los incentivos y las vías de salida contribuye a examinar por qué una intervención puede generar demandas de otras intervenciones.",
       "note": "El libro trata esa dinámica como una posibilidad condicionada y reversible. Discrepa de las generalizaciones sobre el fracaso de toda propiedad común y distingue cooperación comunitaria de planificación impuesta.",
-      "url": "https://mises.org/podcasts/economics-fascism"
+      "url": "https://mises.org/podcasts/economics-fascism/dynamics-fascism-variations-theme-mises",
+      "linkLabel": "Ficha de la conferencia · Mises Institute"
     },
     {
       "id": "c09",
@@ -76,7 +81,8 @@
       "date": "Ciclo del 7–8 de octubre de 2005",
       "contribution": "Su discusión de subsidios, organización sectorial y control económico ayudó a ordenar el problema de los negocios del privilegio.",
       "note": "Se utiliza como interpretación del corpus, no como prueba primaria de cada hecho histórico. Sus analogías con políticas estadounidenses no bastan para clasificar regímenes y no se trasladan como equivalencias.",
-      "url": "https://mises.org/podcasts/economics-fascism"
+      "url": "https://mises.org/podcasts/economics-fascism/economic-model-fascist-state",
+      "linkLabel": "Ficha de la conferencia · Mises Institute"
     },
     {
       "id": "c10",
@@ -85,18 +91,20 @@
       "title": "The New Fascism: Rule by Consensus",
       "date": "18 de abril de 1965 · Ford Hall Forum",
       "contribution": "La crítica de acuerdos que reparten ventajas entre grupos organizados, mientras terceros pagan sus costes, alimenta la pregunta por el consentimiento de quienes quedan fuera.",
-      "note": "El libro distingue negociación libre de privilegio coercitivo y no adopta la condena de toda economía mixta. Corrige, con documentación histórica, la afirmación del corpus que excluye el racismo de la Italia fascista.",
-      "url": "https://ari.aynrand.org/issues/culture-and-society/culture-and-society-more/the-new-fascism-rule-by-consensus/"
+      "note": "La referencia remite a la conferencia publicada por el Ayn Rand Institute. El libro distingue negociación libre de privilegio coercitivo y no adopta la condena de toda economía mixta. Corrige, con documentación histórica, la afirmación de la conferencia que excluye el racismo de la Italia fascista.",
+      "url": "https://courses.aynrand.org/campus-courses/ayn-rand-at-the-ford-hall-forum/the-new-fascism-rule-by-consensus/",
+      "linkLabel": "Conferencia · Ayn Rand Institute"
     },
     {
       "id": "c12",
-      "role": "Conferenciante · una sola procedencia",
+      "role": "Conferenciante · dos versiones de una misma intervención",
       "name": "Ralph Raico",
       "title": "Thoughts on Fascism",
       "date": "Ciclo del 7–8 de octubre de 2005",
       "contribution": "Su discusión sobre el uso de la palabra fascismo y las etapas de la economía italiana sirvió como punto de partida para formular distinciones históricas.",
-      "note": "Se consultaron dos transcripciones de la misma conferencia, con cortes y reconocimiento de voz diferentes; no son testimonios independientes. El libro contrasta sus comparaciones, conserva la especificidad racial y genocida del nazismo y documenta la violencia colonial italiana.",
-      "url": "https://mises.org/podcasts/economics-fascism/thoughts-fascism"
+      "note": "Se consultaron dos versiones de la misma conferencia, acreditada aquí una sola vez. Sus diferencias de cortes y transcripción no las convierten en testimonios independientes. El libro contrasta sus comparaciones, conserva la especificidad racial y genocida del nazismo y documenta la violencia colonial italiana.",
+      "url": "https://mises.org/podcasts/economics-fascism/thoughts-fascism",
+      "linkLabel": "Ficha de la conferencia · Mises Institute"
     },
     {
       "id": "obras-originales",
@@ -105,7 +113,8 @@
       "title": "Cálculo económico, conocimiento, propiedad y libertad",
       "contribution": "El argumento sobre cálculo económico remite a Economic Calculation in the Socialist Commonwealth (1920), de Ludwig von Mises; el problema del conocimiento, a The Use of Knowledge in Society (1945), de Friedrich A. Hayek. Las notas del capítulo 5 identifican las ediciones consultadas y los pasajes pertinentes.",
       "note": "Los nombres de Wilhelm Röpke, Herbert Spencer, Frédéric Bastiat y otros pensadores aparecen en las conferencias recibidas. Se reconoce esa transmisión indirecta sin afirmar que se leyó una obra completa por haber encontrado una mención. La deuda intelectual no implica adhesión a todas sus posiciones. Las fuentes históricas, investigaciones empíricas y objeciones —incluida la investigación de Elinor Ostrom sobre bienes comunes— se acreditan en las notas respectivas.",
-      "url": "/fuentes/"
+      "url": "/fuentes/",
+      "linkLabel": "Ver las notas y fuentes por capítulo"
     }
   ]
 }

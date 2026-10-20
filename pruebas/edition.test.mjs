@@ -331,12 +331,34 @@ test('créditos públicos completos y procedencias no duplicadas', () => {
   assert.deepEqual(entries.map(entry => entry.id).sort(), ['c01', 'c02', 'c03', 'c04', 'c06', 'c07', 'c08', 'c09', 'c10', 'c12', 'obras-originales']);
   const conference = entries.find(entry => entry.id === 'c12');
   assert.match(`${conference.role} ${conference.note}`, /misma conferencia|sola procedencia/i);
-  const publicCredits = stripMarkup(htmlAt('/creditos/corpus/'));
+  assert.equal(entries.filter(entry => /\bRaico\b/i.test(entry.name)).length, 1, 'Raico debe conservar una sola entrada');
+  const creditsHtml = htmlAt('/creditos/corpus/');
+  const cards = [...creditsHtml.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/gi)]
+    .map(match => ({ html: match[0], attrs: tags(match[0])[0].attrs }))
+    .filter(card => (card.attrs.class || '').split(/\s+/).includes('credit-entry'));
+  assert.deepEqual(cards.map(card => card.attrs.id).sort(), entries.map(entry => entry.id).sort(), 'Cada procedencia debe tener una sola ficha pública');
+  const publicCredits = stripMarkup(creditsHtml);
   for (const filename of CORPUS_FILES) assert.ok(!publicCredits.includes(filename), `Nombre interno visible en créditos: ${filename}`);
   for (const entry of entries) {
     assert.ok(entry.name?.trim() && entry.role?.trim() && entry.title?.trim() && entry.contribution?.trim(), `${entry.id}: crédito incompleto`);
     assert.ok(publicCredits.includes(entry.name), `${entry.id}: autor o incertidumbre no visibles en créditos`);
     assert.ok(publicCredits.includes(entry.title), `${entry.id}: obra ausente de créditos`);
+    const card = cards.find(card => card.attrs.id === entry.id).html;
+    const metadata = stripMarkup(card.split(/<p\b[^>]*class="credit-note"/i)[0]);
+    assert.doesNotMatch(metadata, /\b(?:1[5-9]\d{2}|20\d{2})\b|\b(?:sin fecha|fecha no comprobada)\b/i, `${entry.id}: fecha de ficha visible`);
+    if (entry.date?.trim()) assert.ok(!stripMarkup(card).includes(entry.date.trim()), `${entry.id}: se publicó el campo de fecha`);
+    if (entry.url) {
+      assert.ok(entry.linkLabel?.trim(), `${entry.id}: falta una etiqueta de enlace`);
+      assert.match(entry.linkLabel, /\p{L}/u, `${entry.id}: etiqueta sin palabras`);
+      assert.doesNotMatch(entry.linkLabel.trim(), /^(?:https?:\/\/\S+|aquí|ver|abrir|enlace|más|fuente)$/i, `${entry.id}: etiqueta de enlace ambigua`);
+      const expectedHref = entry.url.startsWith('/') && !entry.url.startsWith('//') ? mount(entry.url) : entry.url;
+      const links = [...card.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/gi)].map(match => ({ href: tags(match[0])[0].attrs.href, label: stripMarkup(match[0]) }));
+      assert.ok(links.some(link => link.href === expectedHref && link.label === entry.linkLabel.trim()), `${entry.id}: el enlace público no muestra su etiqueta o destino`);
+    }
+  }
+  for (const file of walk(PUBLIC).filter(file => /\.(html|json)$/i.test(file))) {
+    const content = fs.readFileSync(file, 'utf8');
+    assert.doesNotMatch(content, /\b(?:youtube(?:-nocookie)?\.com|youtu\.be)\b/i, `${path.relative(PUBLIC, file)}: dominio de video publicado`);
   }
 });
 
