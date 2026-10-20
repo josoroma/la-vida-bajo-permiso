@@ -3,15 +3,24 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { normalizeBasePath, outputDirectory } from './paths.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const base=path.join(root,'publicacion');
+const basePath=normalizeBasePath(process.env.BASE_PATH);
+const base=outputDirectory(root,process.env.OUTPUT_DIR);
 const port=Number(process.env.PORT||4173);
 const build=()=>execFileSync(process.execPath,[path.join(root,'scripts/build.mjs')],{stdio:'inherit'});
 build();
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8','.png':'image/png'};
 const server=http.createServer((req,res)=>{
  try{
-  let pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+  const url=new URL(req.url,'http://localhost');
+  let pathname=decodeURIComponent(url.pathname);
+  if(basePath&&pathname===basePath){res.writeHead(308,{Location:basePath+'/'+url.search});return res.end();}
+  if(basePath&&!pathname.startsWith(basePath+'/')){
+   res.writeHead(404,{'Content-Type':mime['.html'],'Cache-Control':'no-cache','X-Content-Type-Options':'nosniff'});
+   return fs.createReadStream(path.join(base,'404.html')).pipe(res);
+  }
+  pathname=pathname.slice(basePath.length);
   let target=path.resolve(base,'.'+pathname);
   if(!target.startsWith(base+path.sep)&&target!==base){res.writeHead(403);return res.end('Acceso no permitido');}
   if(fs.existsSync(target)&&fs.statSync(target).isDirectory())target=path.join(target,'index.html');
@@ -20,7 +29,7 @@ const server=http.createServer((req,res)=>{
   fs.createReadStream(target).pipe(res);
  }catch{res.writeHead(400);res.end('Solicitud inválida');}
 });
-server.listen(port,'127.0.0.1',()=>console.log(`Local: http://localhost:${port}`));
+server.listen(port,'127.0.0.1',()=>console.log(`Local: http://localhost:${port}${basePath}/`));
 let timer;let building=false;
 function schedule(){clearTimeout(timer);timer=setTimeout(()=>{if(building)return;building=true;try{build()}catch(e){console.error('No se pudo reconstruir. Se conserva la última salida.')}finally{building=false}},300);}
 for(const folder of ['manuscrito','lector','datos'])fs.watch(path.join(root,folder),{recursive:true},(_,name)=>{if(name&&!name.endsWith('build-report.json'))schedule()});

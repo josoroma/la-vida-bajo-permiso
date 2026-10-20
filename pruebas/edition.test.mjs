@@ -10,8 +10,11 @@ import { figures } from '../datos/figures.mjs';
 
 // Pruebas del contrato editorial y de la salida pública, sin importar el generador.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PUBLIC = path.join(ROOT, 'publicacion');
+const PUBLIC = path.resolve(ROOT, process.env.OUTPUT_DIR || 'publicacion');
+const BASE_PATH = (process.env.BASE_PATH || '').replace(/\/+$/, '');
 const ORIGIN = 'https://edition.invalid';
+const mount = route => BASE_PATH + route;
+const publicJson = relative => JSON.parse(fs.readFileSync(path.join(PUBLIC, relative), 'utf8'));
 const DEDICATION = 'A la persona más increíble de mi vida, mi hija: Isa Orozco Gros-Desormeaux.';
 const CORPUS_FILES = ['01', '02', '03', '04', '06', '07', '08', '09', '10', '11', '12'].map(n => `${n}.pdf`);
 const pad = n => String(n).padStart(2, '0');
@@ -68,7 +71,8 @@ function wordCount(value) {
 }
 function routeToFile(route) {
   const decoded = decodeURIComponent(new URL(route, ORIGIN).pathname);
-  let candidate = path.resolve(PUBLIC, `.${decoded}`);
+  assert.ok(!BASE_PATH || decoded.startsWith(BASE_PATH + '/'), `Ruta fuera del montaje ${BASE_PATH}: ${route}`);
+  let candidate = path.resolve(PUBLIC, `.${decoded.slice(BASE_PATH.length)}`);
   assert.ok(candidate === PUBLIC || candidate.startsWith(PUBLIC + path.sep), `Ruta fuera de la publicación: ${route}`);
   if (fs.existsSync(candidate) && fs.statSync(candidate).isDirectory()) candidate = path.join(candidate, 'index.html');
   return candidate;
@@ -76,10 +80,10 @@ function routeToFile(route) {
 function routeForFile(filename) {
   let route = '/' + path.relative(PUBLIC, filename).split(path.sep).join('/');
   if (route.endsWith('/index.html')) route = route.slice(0, -10);
-  return route;
+  return mount(route);
 }
 function htmlAt(route) {
-  const filename = routeToFile(route);
+  const filename = routeToFile(mount(route));
   assert.ok(fs.existsSync(filename), `No existe la página ${route}`);
   return fs.readFileSync(filename, 'utf8');
 }
@@ -163,7 +167,8 @@ test('HTML generado: todos los href/src locales y fragmentos resuelven', t => {
       try { target = new URL(value, from); } catch { errors.push(`${routeForFile(file)}: URL inválida ${value}`); continue; }
       if (target.origin !== ORIGIN) continue;
       checked++;
-      const destination = routeToFile(target.href);
+      let destination;
+      try { destination = routeToFile(target.href); } catch (error) { errors.push(`${routeForFile(file)} → ${value}: ${error.message}`); continue; }
       if (!fs.existsSync(destination) || !fs.statSync(destination).isFile()) { errors.push(`${routeForFile(file)} → ${value}: archivo ausente`); continue; }
       if (target.hash) {
         const fragment = decodeURIComponent(target.hash.slice(1).split(':~:')[0]);
@@ -176,6 +181,33 @@ test('HTML generado: todos los href/src locales y fragmentos resuelven', t => {
   }
   t.diagnostic(`${htmlFiles.length} documentos HTML; ${checked} referencias locales comprobadas.`);
   aggregate(errors, 'Enlaces o recursos locales rotos');
+});
+
+test('cada página declara su montaje y todos los recursos CSS resuelven dentro de él', () => {
+  const errors = [];
+  for (const file of walk(PUBLIC)) {
+    if (file.endsWith('.html')) {
+      const metadata = tags(fs.readFileSync(file, 'utf8')).filter(t => t.name === 'meta' && t.attrs.name === 'book-base');
+      assert.equal(metadata.length, 1, `${routeForFile(file)}: falta el montaje para los enlaces dinámicos`);
+      assert.equal(metadata[0].attrs.content, BASE_PATH, `${routeForFile(file)}: montaje incorrecto`);
+    }
+    if (!file.endsWith('.css')) continue;
+    const css = fs.readFileSync(file, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+    const references = [
+      ...[...css.matchAll(/url\(\s*['"]?([^'"\s)]+)['"]?\s*\)/g)].map(match => match[1]),
+      ...[...css.matchAll(/@import\s+['"]([^'"]+)['"]/g)].map(match => match[1]),
+    ];
+    for (const value of references) {
+      if (/^data:/i.test(value)) continue;
+      try {
+        const target = new URL(value, new URL(routeForFile(file), ORIGIN));
+        assert.equal(target.origin, ORIGIN, 'La edición debe conservar las fuentes y estilos en el sitio');
+        const destination = routeToFile(target.href);
+        assert.ok(fs.existsSync(destination) && fs.statSync(destination).isFile(), 'Recurso ausente');
+      } catch (error) { errors.push(`${routeForFile(file)} → ${value}: ${error.message}`); }
+    }
+  }
+  aggregate(errors, 'Recursos CSS fuera del sitio o rotos');
 });
 
 test('HTML y SVG: IDs únicos y referencias accesibles internas existentes', () => {
@@ -199,16 +231,16 @@ test('secuencia anterior/siguiente completa, continua y bidireccional', () => {
     for (const [rel, expected] of [['prev', readingRoutes[index - 1] || '/indice/'], ['next', readingRoutes[index + 1] || '/creditos/corpus/']]) {
       const candidates = links.filter(t => (t.attrs.rel || '').split(/\s+/).includes(rel));
       assert.equal(candidates.length, 1, `${route}: se requiere un enlace rel=${rel}`);
-      assert.equal(new URL(candidates[0].attrs.href, ORIGIN + route).pathname, expected, `${route}: continuación ${rel} incorrecta`);
+      assert.equal(new URL(candidates[0].attrs.href, ORIGIN + mount(route)).pathname, mount(expected), `${route}: continuación ${rel} incorrecta`);
     }
   }
 });
 
 test('manifiesto y búsqueda incluyen las 75 páginas, una sola vez y con texto', () => {
-  const manifest = json('publicacion/assets/manifest.json');
+  const manifest = publicJson('assets/manifest.json');
   assert.equal(manifest.chapters, 16);
   assert.deepEqual(manifest.pages.map(p => p.url), readingRoutes, 'El manifiesto no coincide con el orden editorial completo');
-  const index = json('publicacion/assets/search.json');
+  const index = publicJson('assets/search.json');
   assert.ok(Array.isArray(index));
   unique(index.map(p => p.url), 'URL duplicada en búsqueda');
   assert.deepEqual(index.map(p => p.url).sort(), [...readingRoutes].sort());
@@ -358,14 +390,28 @@ test('el servidor real entrega el libro y no sirve originales ni rutas internas'
     child.stdout.on('data', data => { output += data; if (output.includes(`Local: http://localhost:${port}`)) { clearTimeout(timer); resolve(); } });
   });
   const base = `http://127.0.0.1:${port}`;
-  const good = await fetch(base + '/prologo/01/');
+  const good = await fetch(base + mount('/prologo/01/'));
   assert.equal(good.status, 200);
   assert.match(good.headers.get('content-type'), /^text\/html/);
   assert.ok((await good.text()).includes('Los destructores del orden espontáneo'));
   for (const resource of [...CORPUS_FILES.map(f => '/' + f), '/investigacion/inventario.json', '/investigacion/transcripciones/01.txt', '/manuscrito/capitulo-01.json', '/plan.md', '/%2e%2e%2f01.pdf']) {
-    const response = await fetch(base + resource);
+    const response = await fetch(base + mount(resource));
     const buffer = Buffer.from(await response.arrayBuffer());
     assert.ok([400, 403, 404].includes(response.status), `${resource}: servido con estado ${response.status}`);
     assert.ok(!buffer.subarray(0, 5).equals(Buffer.from('%PDF-')), `${resource}: expone un PDF original`);
+  }
+  const stylesheet = await fetch(base + mount('/assets/style.css'));
+  assert.equal(stylesheet.status, 200);
+  assert.match(stylesheet.headers.get('content-type'), /^text\/css/);
+  const search = await fetch(base + mount('/assets/search.json'));
+  assert.equal(search.status, 200);
+  assert.equal((await search.json()).length, readingRoutes.length);
+  if (BASE_PATH) {
+    const redirect = await fetch(base + BASE_PATH + '?origen=prueba', { redirect: 'manual' });
+    assert.equal(redirect.status, 308);
+    assert.equal(new URL(redirect.headers.get('location'), base).href, base + mount('/') + '?origen=prueba');
+    for (const resource of ['/prologo/01/', '/assets/style.css', '/assets/search.json', BASE_PATH + '-otro/']) {
+      assert.equal((await fetch(base + resource)).status, 404, `${resource}: el servidor ignoró el montaje`);
+    }
   }
 });
